@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Moirai+One&display=swap');
+
+$img-dir: '../src/assets/';
+
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("../src/assets/ms_sans_serif.woff") format("woff");
+  src: url("../src/assets/ms_sans_serif.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("../src/assets/ms_sans_serif_bold.woff") format("woff");
+  src: url("../src/assets/ms_sans_serif_bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+html {
+    cursor: url('#{$img-dir}dino.gif'), default;
+}
+
+body {
+    margin: 0;
+    background-image: url(#{$img-dir}dancing-cat-dancing-kitten.gif);
+    background-position: center;
+    font-family: monospace, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    line-height: 23px;
+    color: rgb(0, 0, 0);
+}
+
+.dragndrop-container {
+    touch-action: none;
+}
+
+.site-container {
+    max-width: 1100px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.big {
+    // font-family: 'Moirai One', system-ui;;
+    font-size: 55px;
+    line-height: 67px;
+    // color: #fff;
+    // text-shadow: 1px 1px 1px #000, 1px 4px 3px #000;
+}
+
+.medium {
+    font-size: 21px;
+    line-height: 26px;
+}
+
+.window-container {
+    position: absolute;
+    will-change: transform, left, top;
+    contain: layout;
+    cursor: grab;
+
+    &:active {
+        cursor: grabbing;
+    }
+
+    $prev: 0;
+    @for $i from 1 through 4 {
+        $top: random(25) + $prev;
+        &:nth-child(#{$i}) {
+            // top: #{percentage(calc($top / 100))};
+            // left: #{percentage(calc(random(70) / 100))};
+            rotate: #{random(12) - 6}deg;
+        }
+        
+        $prev: $top;
+    }
+    &#presents {
+        left: 30%;
+        top: 50px;
+        z-index: 10;
+    }
+    
+    &#jill {
+        left: 14%;
+        top: 244.682px;
+        z-index: 2;
+    }
+    
+    &#featuring {
+        left: 40%;
+        top: 200px;
+        z-index: 1;
+    }
+
+    &#details {
+        top: 100px;
+        left: 60%;
+    }
+
+    &[data-size=large] {
+        min-width: 240px;
+  
+        .window-body {
+          font-size: 21px;
+        }
+    }
+  
+      &[data-size=medium] {
+        .window-body {
+          font-size: 16px;
+        }
+    }
+    .window {
+        min-width: 240px;
+        position: absolute;
+        opacity: 0;
+    }
+
+    opacity: 0;
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+            animation: window-popup .1s forwards calc(#{$i} * .3s);
+            @for $j from 1 through 20 {
+                .window:nth-child(#{$j}) {
+                    top: calc(#{$j}* 6px);
+                    left: calc(#{$j}* 6px);
+                    animation: window-popup .1s forwards calc(#{$j} * .1s + .5s * #{$i});
+                }
+            }
+        }
+    }
+}
+
+@keyframes window-popup {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -40,7 +40,7 @@ export default function Window(props) {
                             </ul>
                         }
                         {table &&
-                            <div className="sunken-panel" style={{height: 140, width: 200}}>
+                            <div className="sunken-panel" style={{height: 160, width: 200}}>
                                 <table className="interactive">
                                     <thead>
                                         <tr>

@@ -22,6 +22,7 @@ html {
 }
 
 body {
+  min-height: calc(100vh + 150px);
   margin: 0;
   background-image: url(../src/assets/dancing-cat-dancing-kitten.gif);
   background-position: center;
@@ -61,36 +62,28 @@ body {
 .window-container:active {
   cursor: grabbing;
 }
-.window-container:nth-child(1) {
-  rotate: -5deg;
-}
-.window-container:nth-child(2) {
-  rotate: 1deg;
-}
-.window-container:nth-child(3) {
-  rotate: 0deg;
-}
-.window-container:nth-child(4) {
-  rotate: 0deg;
-}
 .window-container#presents {
   left: 30%;
   top: 50px;
+  rotate: -5deg;
   z-index: 10;
 }
 .window-container#jill {
   left: 14%;
   top: 244.682px;
+  rotate: 1deg;
   z-index: 2;
 }
 .window-container#featuring {
   left: 40%;
   top: 200px;
+  rotate: 0deg;
   z-index: 1;
 }
 .window-container#details {
   top: 100px;
   left: 60%;
+  rotate: 0deg;
 }
 .window-container[data-size=large] {
   min-width: 240px;
@@ -525,6 +518,25 @@ body {
   }
   to {
     opacity: 1;
+  }
+}
+@media (max-width: 560px) {
+  .window-container#presents {
+    left: 0;
+    top: 0;
+  }
+  .window-container#jill {
+    left: -100px;
+    top: 120px;
+  }
+  .window-container#featuring {
+    left: unset;
+    top: 250px;
+    right: 100px;
+  }
+  .window-container#details {
+    top: 415px;
+    left: -57px;
   }
 }
 

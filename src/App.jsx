@@ -21,7 +21,7 @@ function App() {
                   table={{
                       "Date": "02 MARCH 2024",
                       "Location": "Industry Lab",
-                      "Time": "6:30pm - 10:00pm",
+                      "Time": "6:00pm - 10:00pm",
                       "$$$": "Free",
                       "Ages": "All",
                       "BYOB": "Yes"

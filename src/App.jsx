@@ -6,7 +6,7 @@ function App() {
     <>
       <div className="intro section">
           <div className="site-container">
-              <Window id="presents" title="Alert" size="large" value="dubl dipd presents:" buttons={['Okay', 'Cancel']} />
+              <Window id="presents" title="Alert" size="large" value="dubl dipd presents:   " buttons={['Okay', 'Cancel']} />
               <Window id="jill" title="Alert" size="small" value="jills birthday" buttons={['Ew']} />
               <Window 
                 id="featuring" 

@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  min-height: calc(100vh + 150px);
+  min-height: calc(100vh + 200px);
   margin: 0;
   background-image: url(../src/assets/dancing-cat-dancing-kitten.gif);
   background-position: center;
@@ -63,33 +63,39 @@ body {
   cursor: grabbing;
 }
 .window-container#presents {
-  left: 30%;
-  top: 50px;
+  left: 25%;
+  top: 100px;
   rotate: -5deg;
   z-index: 10;
 }
 .window-container#jill {
-  left: 14%;
-  top: 244.682px;
+  left: 17%;
+  top: 294.682px;
   rotate: 1deg;
   z-index: 2;
 }
 .window-container#featuring {
-  left: 40%;
-  top: 200px;
-  rotate: 0deg;
+  left: 37%;
+  top: 300px;
   z-index: 1;
 }
 .window-container#details {
-  top: 100px;
-  left: 60%;
-  rotate: 0deg;
+  top: 150px;
+  left: 55%;
+}
+.window-container table > tbody > tr > * {
+  height: 18px;
 }
 .window-container[data-size=large] {
   min-width: 240px;
 }
 .window-container[data-size=large] .window-body {
-  font-size: 21px;
+  font-size: 38px;
+  white-space: nowrap;
+}
+.window-container[data-size=large] .window-body li {
+  font-size: 14px;
+  line-height: 20px;
 }
 .window-container[data-size=medium] .window-body {
   font-size: 16px;
@@ -518,6 +524,15 @@ body {
   }
   to {
     opacity: 1;
+  }
+}
+@media (max-width: 1000px) {
+  .window-container#featuring {
+    left: 41%;
+    top: 334px;
+  }
+  .window-container#details {
+    left: 61%;
   }
 }
 @media (max-width: 560px) {

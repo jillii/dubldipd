@@ -1,9 +1,11 @@
 import Window from './Window'
+import Stars from './Stars.jsx'
 
 function App() {
 
   return (
     <>
+      <Stars />
       <div id="info">☺⚡☺❤</div>
       <div className="intro section">
           <div className="site-container">

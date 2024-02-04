@@ -18,6 +18,8 @@ $img-dir: '../src/assets/';
   font-style: normal;
 }
 
+.title-bar, .window, button, input, label, option, select, table, textarea, ul.tree-view {font-size: 14px; line-height: 18px;}
+
 div {
     box-sizing: border-box;
 }
@@ -32,9 +34,17 @@ body {
     background-image: url(#{$img-dir}dancing-cat-dancing-kitten.gif);
     background-position: center;
     font-family: monospace, Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 18px;
-    line-height: 23px;
-    color: rgb(0, 0, 0);
+    overflow-x: hidden;
+}
+
+#info {
+    font-size: 27px;
+    filter: brightness(100);
+    position: fixed;
+    bottom: 14px;
+    right: 14px;
+    display: flex;
+    z-index: 999;
 }
 
 .dragndrop-container {
@@ -48,11 +58,8 @@ body {
 }
 
 .big {
-    // font-family: 'Moirai One', system-ui;;
     font-size: 55px;
     line-height: 67px;
-    // color: #fff;
-    // text-shadow: 1px 1px 1px #000, 1px 4px 3px #000;
 }
 
 .medium {
@@ -62,23 +69,20 @@ body {
 
 .window-container {
     position: absolute;
-    will-change: transform, left, top;
-    contain: layout;
-    cursor: grab;
 
-    &:active {
-        cursor: grabbing;
+    table>tbody>tr>* {
+        height: 23px;
     }
 
     &#presents {
-        left: 25%;
-        top: 100px;
+        left: 9%;
+        top: 97px;
         rotate: -5deg;
         z-index: 10;
     }
     
     &#jill {
-        left: 17%;
+        left: -10%;
         top: 294.682px;
         rotate: 1deg;
         z-index: 2;
@@ -91,7 +95,7 @@ body {
     }
 
     &#details {
-        top: 150px;
+        top: 125px;
         left: 55%;
     }
 
@@ -148,15 +152,27 @@ body {
     }
 }
 
+@media (min-width: 1000px) {
+    .window-container {
+        &#presents {
+            left: 27%;
+        }
+    
+        &#jill {
+            left: 15%;
+        }
+    }    
+} 
+
 @media (max-width: 1000px) {
     .window-container {
         &#featuring {
-            left: 41%;
+            left: 27%;
             top: 334px;
         }
     
         &#details {
-            left: 61%;
+            left: 54%;
         }
     }
 }
@@ -164,13 +180,14 @@ body {
 @media (max-width: 560px) {
     .window-container {
         &#presents {
-            left: 0;
+            left: unset;
             top: 0;
+            right: 200px;
         }
         
         &#jill {
             left: -100px;
-            top: 120px;
+            top: 146px;
         }
         
         &#featuring {

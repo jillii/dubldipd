@@ -4,6 +4,7 @@ function App() {
 
   return (
     <>
+      <div id="info">☺⚡☺❤</div>
       <div className="intro section">
           <div className="site-container">
               <Window id="presents" title="Alert" size="large" value="dubl dipd presents:   " buttons={['Okay', 'Cancel']} />

@@ -129,7 +129,8 @@ body {
         opacity: 0;
 
         &:last-of-type {
-            position: relative
+            position: relative;
+            display: inline-block;
         }
     }
 
@@ -184,25 +185,29 @@ body {
 
 @media (max-width: 560px) {
     .window-container {
+        position: relative;
+
         &#presents {
             left: -120px;
             top: 0;
         }
         
         &#jill {
-            left: -100px;
-            top: 146px;
+            left: unset;
+            right: 0;
+            top: 0;
         }
         
         &#featuring {
             left: unset;
-            top: 250px;
+            top: 0;
             right: 100px;
         }
     
         &#details {
-            top: 415px;
-            left: -57px;
+            top: 0;
+            left: unset;
+            right: 0;
         }
     }
 }

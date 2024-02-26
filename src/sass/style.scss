@@ -126,6 +126,10 @@ body {
         min-width: 240px;
         position: absolute;
         opacity: 0;
+
+        &:last-of-type {
+            position: relative
+        }
     }
 
     opacity: 0;
@@ -180,9 +184,8 @@ body {
 @media (max-width: 560px) {
     .window-container {
         &#presents {
-            left: unset;
+            left: -120px;
             top: 0;
-            right: 200px;
         }
         
         &#jill {

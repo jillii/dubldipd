@@ -25,11 +25,12 @@ div {
 }
 
 html {
+    height: 100%;
     cursor: url('#{$img-dir}dino.gif'), default;
 }
 
 body {
-    min-height: calc(100vh + 200px);
+    min-height: calc(100% + 200px);
     margin: 0;
     background-image: url(#{$img-dir}dancing-cat-dancing-kitten.gif);
     background-position: center;

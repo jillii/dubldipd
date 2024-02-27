@@ -35,6 +35,7 @@ body {
     background-image: url(#{$img-dir}dancing-cat-dancing-kitten.gif);
     background-position: center;
     font-family: monospace, Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
 }
 
 #info {
@@ -45,10 +46,6 @@ body {
     right: 14px;
     display: flex;
     z-index: 999;
-}
-
-.dragndrop-container {
-    touch-action: none;
 }
 
 .site-container {

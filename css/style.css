@@ -37,7 +37,6 @@ body {
   background-image: url(../src/assets/dancing-cat-dancing-kitten.gif);
   background-position: center;
   font-family: monospace, Verdana, Geneva, Tahoma, sans-serif;
-  overflow: hidden auto;
 }
 
 #info {
